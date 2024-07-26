@@ -31,7 +31,20 @@ class Block():
 
 
 class Blockchain():
-    pass
+    difficulty = 4
+
+
+    def __init__(self,chain=[]):
+        self.chain = chain
+
+    def add(self, block):    
+        self.chain.append({
+            'hash': block.hash(),
+            'previous': block.previous_hash,
+            'number': block.number,
+            'data': block.data,
+            'nonce': block.nonce
+        })
 
 
 def main():
